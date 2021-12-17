@@ -1,0 +1,15 @@
+$ git reflog show HEAD (отображение стека коммитов на репозитории){0}-текущий
+
+$ touch testfile.java (данные для изменения)
+$ git add testfile.java
+$ git stash (без фиксации данного изменения)
+$ touch anotherfile.java (данные для нового стеша)
+$ git add anotherfile.java
+$ git stash 
+$ git stash list(отображение всех "припрятанных" изменений)
+
+$ git stash apply stash@{1} (применил testfile.java)
+$ git stash drop stash@{0} (отбросил anotherfile.java)
+$ git reflog show HEAD (посмотреть что получилось, для себя)
+$ git commit -m "testfile.java after stash"
+$ git rebase --interactive HEAD@{1} (интерактивная перебазировка на 2 коммит)
