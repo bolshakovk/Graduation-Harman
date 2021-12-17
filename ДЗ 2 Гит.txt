@@ -13,3 +13,12 @@ $ git stash drop stash@{0} (отбросил anotherfile.java)
 $ git reflog show HEAD (посмотреть что получилось, для себя)
 $ git commit -m "testfile.java after stash"
 $ git rebase --interactive HEAD@{1} (интерактивная перебазировка на 2 коммит)
+$ git rebase --interactive HEAD~1 (аналог)
+
+стр 19
+$ git format-patch origin (созданы патчи из текущей бранчи)
+(что значит Check path? 
+$ git apply --check
+$ git diff > 0001-testfile.java-after-stash.patch
+)
+$ git am --resolved
