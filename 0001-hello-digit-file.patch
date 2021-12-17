@@ -1,33 +1,52 @@
-From 3dcf0a6decc4444a33c8ac23a18667bbb122758a Mon Sep 17 00:00:00 2001
+From 9cb396a99dc54a1ea551d02ef50aec0d2c44e65c Mon Sep 17 00:00:00 2001
 From: bolshakovk <bolshakovk1234@gmail.com>
 Date: Fri, 17 Dec 2021 11:06:26 +0300
-Subject: [PATCH]  hello digit file
+Subject: [PATCH] hello digit file
 
 ---
- "\320\224\320\227 2 \320\223\320\270\321\202.txt" | 11 ++++++++++-
- 1 file changed, 10 insertions(+), 1 deletion(-)
+ 0001-hello-digit-file.patch | 33 +++++++++++++++++++++++++++++++++
+ 1 file changed, 33 insertions(+)
+ create mode 100644 0001-hello-digit-file.patch
 
-diff --git "a/\320\224\320\227 2 \320\223\320\270\321\202.txt" "b/\320\224\320\227 2 \320\223\320\270\321\202.txt"
-index e7f129b..7f30307 100644
---- "a/\320\224\320\227 2 \320\223\320\270\321\202.txt"	
-+++ "b/\320\224\320\227 2 \320\223\320\270\321\202.txt"	
-@@ -12,4 +12,13 @@ $ git stash apply stash@{1} (применил testfile.java)
- $ git stash drop stash@{0} (отбросил anotherfile.java)
- $ git reflog show HEAD (посмотреть что получилось, для себя)
- $ git commit -m "testfile.java after stash"
--$ git rebase --interactive HEAD@{1} (интерактивная перебазировка на 2 коммит)
-\ No newline at end of file
-+$ git rebase --interactive HEAD@{1} (интерактивная перебазировка на 2 коммит)
-+$ git rebase --interactive HEAD~1 (аналог)
+diff --git a/0001-hello-digit-file.patch b/0001-hello-digit-file.patch
+new file mode 100644
+index 0000000..023d5f9
+--- /dev/null
++++ b/0001-hello-digit-file.patch
+@@ -0,0 +1,33 @@
++From 3dcf0a6decc4444a33c8ac23a18667bbb122758a Mon Sep 17 00:00:00 2001
++From: bolshakovk <bolshakovk1234@gmail.com>
++Date: Fri, 17 Dec 2021 11:06:26 +0300
++Subject: [PATCH]  hello digit file
 +
-+стр 19
-+$ git format-patch origin (созданы патчи из текущей бранчи)
-+(что значит Check path? 
-+$ git apply --check
-+$ git diff > 0001-testfile.java-after-stash.patch
-+)
-+$ git am --resolved
-\ No newline at end of file
++---
++ "\320\224\320\227 2 \320\223\320\270\321\202.txt" | 11 ++++++++++-
++ 1 file changed, 10 insertions(+), 1 deletion(-)
++
++diff --git "a/\320\224\320\227 2 \320\223\320\270\321\202.txt" "b/\320\224\320\227 2 \320\223\320\270\321\202.txt"
++index e7f129b..7f30307 100644
++--- "a/\320\224\320\227 2 \320\223\320\270\321\202.txt"	
+++++ "b/\320\224\320\227 2 \320\223\320\270\321\202.txt"	
++@@ -12,4 +12,13 @@ $ git stash apply stash@{1} (применил testfile.java)
++ $ git stash drop stash@{0} (отбросил anotherfile.java)
++ $ git reflog show HEAD (посмотреть что получилось, для себя)
++ $ git commit -m "testfile.java after stash"
++-$ git rebase --interactive HEAD@{1} (интерактивная перебазировка на 2 коммит)
++\ No newline at end of file
+++$ git rebase --interactive HEAD@{1} (интерактивная перебазировка на 2 коммит)
+++$ git rebase --interactive HEAD~1 (аналог)
+++
+++стр 19
+++$ git format-patch origin (созданы патчи из текущей бранчи)
+++(что значит Check path? 
+++$ git apply --check
+++$ git diff > 0001-testfile.java-after-stash.patch
+++)
+++$ git am --resolved
++\ No newline at end of file
++-- 
++2.28.0.windows.1
++
 -- 
 2.28.0.windows.1
 
