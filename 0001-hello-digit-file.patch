@@ -1,7 +1,7 @@
 From 9cb396a99dc54a1ea551d02ef50aec0d2c44e65c Mon Sep 17 00:00:00 2001
 From: bolshakovk <bolshakovk1234@gmail.com>
 Date: Fri, 17 Dec 2021 11:06:26 +0300
-Subject: [PATCH] hello digit file
+Subject: [PATCH 1/2] hello digit file
 
 ---
  0001-hello-digit-file.patch | 33 +++++++++++++++++++++++++++++++++
