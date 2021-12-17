@@ -8,6 +8,6 @@
 
 ![scenario](scenario.drawio.png)
 
-полезные ссылки:
+полезные ссылки:з
 * https://www.kaggle.com/trolukovich/steam-games-complete-dataset датасет игр
 * http://steamwebapi.azurewebsites.net документация API
