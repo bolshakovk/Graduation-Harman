@@ -7,8 +7,3 @@
 какое-то время. При 5-ых игроках, выбор может тянуться весь вечер.
 
 ![scenario](scenario.drawio.png)
-
-полезные ссылки:з
-* https://www.kaggle.com/trolukovich/steam-games-complete-dataset датасет игр
-* http://steamwebapi.azurewebsites.net документация API
-* http://learn-android.ru/news/snabzhaem_prilozhenie_funkciej_vkhoda_po_loginu_parolju/2015-05-15-107.html первый рецепт
