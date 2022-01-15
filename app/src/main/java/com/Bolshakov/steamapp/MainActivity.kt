@@ -1,52 +1,60 @@
 package com.Bolshakov.steamapp
 
 import android.content.Intent
+import android.graphics.Color
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Spinner
 import android.widget.TextView
-import android.widget.Toast
-import kotlin.properties.Delegates
+import org.w3c.dom.Text
 
 class   MainActivity : AppCompatActivity() {
-    private lateinit var username: EditText
-    private lateinit var password: EditText
-    private lateinit var login: Button
-    private lateinit var loginLocked: TextView
-    private lateinit var attempts: TextView
-    private lateinit var numberOfAttempts: TextView
-    private var numberOfRemainingLoginAttempts = 3
+    //функция проверки на валидность, проверяется вводный текст, и сравнивается с ожидаемым
+    private fun isValid(editText: EditText, expected: String): Boolean {
+        val actual = editText.text.toString()
+        return expected.equals(actual)
+    }
+    //функция визуализации ошибки, красное если все плохо
+    //TODO починить что оно красится в зеленое после возврата, не красится при ничего
+    private fun visualizeValidity(editText: EditText, isValid: Boolean) {
+        val backgroundColor: Int = if (isValid) Color.GREEN else Color.RED
+        editText.setBackgroundColor(backgroundColor)
+    }
 
+    // кнопка подключение... обратывается поле логина, если соотвествует хардкоженному "asd", то войдет
+    fun connectSteam(view: View){
+        val buttonConnectSteam : Button = findViewById(R.id.button_connectSteam)
+        val textUserName : EditText = findViewById(R.id.text_userName)
+        val textUserPassword : TextView = findViewById(R.id.text_userPassword)
+        buttonConnectSteam.setOnClickListener(View.OnClickListener {
+            fun checkEditText(source : EditText, expected: String) : Boolean{
+                val valid = isValid(source, expected)
+                visualizeValidity(source, valid)
+                return valid
+            }
+            //TODO убрать хардкод, добавить проверку пароля
+            val allTextValid: Boolean = checkEditText(textUserName, "asd")
+            if (allTextValid){
+        val intent = Intent(this, ConnectSteamActivity::class.java)
+        startActivity(intent)
+            }
 
-    fun Login(view: View) {
-        if (username.text.toString() == "admin"
-            && password.text.toString() == "admin"
-        ) {
-            Toast.makeText(applicationContext, "Вход выполнен", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, LoggedActivity::class.java)
-            startActivity(intent)
-        } else {
-            Toast.makeText(applicationContext, "Неправильные данные!", Toast.LENGTH_SHORT)
-                .show()
-            numberOfRemainingLoginAttempts--
-        }
-        attempts.visibility = View.VISIBLE
-        numberOfAttempts.visibility = View.VISIBLE
-        numberOfAttempts.text = numberOfRemainingLoginAttempts.toString()
+        })
+    }
+
+    fun registrationSteam(view: View){
+        val intent = Intent(this, RegistrationSteamActivity::class.java)
+        startActivity(intent)
     }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        username = findViewById(R.id.edit_user)
-        password = findViewById(R.id.edit_password)
-        login = findViewById(R.id.button_login)
-        loginLocked = findViewById(R.id.login_locked)
-        attempts = findViewById(R.id.attempts)
-        numberOfAttempts = findViewById(R.id.number_of_attempts)
     }
 }

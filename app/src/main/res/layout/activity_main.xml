@@ -1,37 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#212633">
 
     <TextView
         android:id="@+id/Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Авторизация"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_marginTop="3dp"
+        android:background="#212633"
+        android:backgroundTint="#212633"
+        android:backgroundTintMode="src_in"
+        android:text="Вход в steam"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#7E7A7A" />
 
     <TextView
         android:id="@+id/user_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/Login"
-        android:layout_marginTop="75dp"
-        android:layout_marginLeft="10dp"
-        android:text="Пользователь:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="96dp"
+        android:text="Имя аккаунта"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#A5A1A1" />
 
-    <EditText
-        android:id="@+id/edit_user"
+    <TextView
+        android:id="@+id/user_text3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/password_text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="282dp"
+        android:layout_marginBottom="201dp"
+        android:text="Нет аккаунта steam?"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#A5A1A1"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/text_userName"
+        android:layout_width="238dp"
+        android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/user_text"
-        android:layout_marginLeft="35dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="-20dp"
         android:layout_toRightOf="@+id/user_text"
-        android:hint="введите имя " >
+        android:hint="введите имя "
+        android:textColor="#A5A1A1"
+        android:textColorHint="#636161">
+
         <requestFocus />
     </EditText>
 
@@ -39,63 +64,80 @@
         android:id="@+id/password_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/user_text"
         android:layout_below="@+id/user_text"
-        android:layout_marginTop="40dp"
-        android:text="Пароль:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_alignLeft="@+id/user_text"
+        android:layout_marginLeft="53dp"
+        android:layout_marginTop="49dp"
+        android:text="Пароль"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#A5A1A1" />
 
     <EditText
-        android:id="@+id/edit_password"
-        android:layout_width="wrap_content"
+        android:id="@+id/text_userPassword"
+        android:layout_width="241dp"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text_userName"
+        android:layout_alignRight="@+id/text_userName"
         android:layout_alignBottom="@+id/password_text"
-        android:layout_alignLeft="@+id/edit_user"
-        android:layout_alignRight="@+id/edit_user"
+        android:layout_marginLeft="-1dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginRight="-1dp"
+        android:layout_marginBottom="-19dp"
         android:hint="введите пароль"
-        android:inputType="textPassword" />
-
-    <TextView
-        android:id="@+id/attempts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/password_text"
-        android:layout_below="@+id/password_text"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="48dp"
-        android:text="Попыток:"
-        android:visibility="invisible"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:inputType="textPassword"
+        android:textColor="#A5A1A1"
+        android:textColorHint="#636161" />
 
     <Button
-        android:id="@+id/button_login"
-        android:layout_width="wrap_content"
+        android:id="@+id/button_connectSteam"
+        android:layout_width="184dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="94dp"
-        android:onClick="Login"
-        android:text="Войти" />
+        android:layout_above="@+id/button_registrationSteam"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="175dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="63dp"
+        android:backgroundTint="#3A435A"
+        android:onClick="connectSteam"
+        android:text="Подключиться.."
+        android:textSize="12sp" />
 
-    <TextView
-        android:id="@+id/number_of_attempts"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/button_registrationSteam"
+        android:layout_width="184dp"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/user_text"
-        android:layout_alignTop="@+id/attempts"
-        android:visibility="invisible" />
-
-    <TextView
-        android:id="@+id/login_locked"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:visibility="invisible"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="57dp"
-        android:layout_alignRight="@+id/edit_password"
-        android:layout_alignEnd="@+id/edit_password"
-        android:layout_alignLeft="@+id/attempts"
-        android:layout_alignStart="@+id/attempts" />
+        android:layout_marginStart="176dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="191dp"
+        android:backgroundTint="#3A435A"
+        android:onClick="registrationSteam"
+        android:text="Регистрация.."
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/white" />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/white" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="177dp"
+        android:layout_height="96dp"
+        android:layout_below="@+id/Login"
+        android:layout_marginTop="-20dp"
+        app:srcCompat="@drawable/steamico" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#E8E8E8" />
 
 </RelativeLayout>

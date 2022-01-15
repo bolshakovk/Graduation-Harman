@@ -1,16 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#212633"
+    android:scrollbarStyle="insideInset"
+    android:visibility="visible">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="129dp"
+        android:background="#0D0F19" />
 
     <TextView
+        android:id="@+id/multyTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profileTextView"
+        android:layout_marginTop="68dp"
+        android:background="@android:drawable/editbox_background"
+        android:drawableRight="@android:drawable/arrow_down_float"
+        android:drawablePadding="16dp"
+        android:hint="Список друзей.."
+        android:padding="12dp" />
+
+    <TextView
+        android:id="@+id/profileTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Вы успешно залогинились!"
-        android:padding="5pt"
-        android:layout_gravity="center"
-        android:textSize="12pt"/>
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="14dp"
+        android:text="Тут будет профиль и фотка"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/dataTextView"
+        android:layout_width="359dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="39dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="267dp"
+        android:text="Тут будет отображаться список общих игр"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+</RelativeLayout>

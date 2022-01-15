@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">SteamApp</string>
+
+
+    <string-array name="friendList">
+        <item>Русланка</item>
+        <item>Плющик</item>
+        <item>Славка</item>
+        <item>Димасик</item>
+        <item>Костька</item>
+        <item>Колинс</item>
+
+    </string-array>
 </resources>
