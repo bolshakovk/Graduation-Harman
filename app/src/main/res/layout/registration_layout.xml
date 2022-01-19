@@ -7,12 +7,13 @@
     android:background="#212633">
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/personPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Пароль"
+        android:hint="@string/Пароль"
         android:inputType="textPassword"
+        android:minHeight="48dp"
         android:textColor="@color/white"
         android:textColorHint="#636161"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,7 +34,7 @@
         android:id="@+id/RegistrationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Регистрация"
+        android:text="@string/Регистрация"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
@@ -42,82 +43,111 @@
         app:layout_constraintTop_toTopOf="@+id/view2" />
 
     <EditText
-        android:id="@+id/editTextTextPassword_repeat"
+        android:id="@+id/personPassword_repeat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Повторите пароль"
         android:inputType="textPassword"
+        android:minHeight="48dp"
         android:textColor="@color/white"
         android:textColorHint="#636161"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/personPassword" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/personEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Почта"
+        android:hint="@string/Почта"
         android:inputType="textEmailAddress"
+        android:minHeight="48dp"
         android:textColor="@color/white"
         android:textColorHint="#636161"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword_repeat" />
+        app:layout_constraintTop_toBottomOf="@+id/personPassword_repeat" />
 
     <EditText
-        android:id="@+id/editTextTextPersonLogin"
+        android:id="@+id/personLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Логин"
+        android:hint="@string/Логин"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:textColor="@color/white"
         android:textColorHint="#636161"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+        app:layout_constraintBottom_toTopOf="@+id/personPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonLogin2"
+        android:id="@+id/personName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Имя"
+        android:hint="@string/Имя"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:textColor="@color/white"
         android:textColorHint="#636161"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/personEmailAddress" />
 
     <EditText
-        android:id="@+id/editTextTextPersonLogin3"
+        android:id="@+id/personSurname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:ems="10"
-        android:hint="Фамилия"
+        android:hint="@string/Фамилия"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:textColor="@color/white"
         android:textColorHint="#636161"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/personEmailAddress" />
+
+    <TextView
+        android:id="@+id/wrongPasswordText"
+        android:layout_width="344dp"
+        android:layout_height="48dp"
+        android:textColor="#A60D0D"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/personSurname" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/saveButton_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#3A435A"
+        android:onClick="onClickSave"
         android:text="Завершить"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonLogin3" />
+        app:layout_constraintTop_toBottomOf="@+id/personSurname" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="onClickAddImg"
+        app:backgroundTint="#3A435A"
+        app:layout_constraintBottom_toTopOf="@+id/personLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:srcCompat="@drawable/ic_profile" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

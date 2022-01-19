@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">SteamApp</string>
+    <string name="Пароль">Пароль</string>
+    <string name="Регистрация">Регистрация</string>
+    <string name="Повтор">Повторите пароль</string>
+    <string name="Почта">Почта</string>
+    <string name="Логин">Логин</string>
+    <string name="Имя">Имя</string>
+    <string name="Фамилия">Фамилия</string>
 
 
     <string-array name="friendList">

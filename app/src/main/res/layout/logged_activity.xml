@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -31,7 +32,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="14dp"
-        android:text="Тут будет профиль и фотка"
         android:textColor="@color/white"
         android:textSize="20sp" />
 
@@ -48,5 +48,31 @@
         android:text="Тут будет отображаться список общих игр"
         android:textColor="@color/white"
         android:textSize="20sp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/deleteActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="48dp"
+        android:clickable="true"
+        android:onClick="onClickDelete"
+        app:backgroundTint="#3A435A"
+        app:srcCompat="@android:drawable/ic_delete" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/editActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="315dp"
+        android:layout_marginBottom="48dp"
+        android:clickable="true"
+        android:onClick="onClickEdit"
+        app:srcCompat="@android:drawable/ic_menu_edit"
+        tools:ignore="UsingOnClickInXml" />
 
 </RelativeLayout>

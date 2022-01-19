@@ -3,38 +3,40 @@
     package="com.Bolshakov.steamapp">
 
     <application
-            android:allowBackup="true"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SteamApp">
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:exported="true">
-
+            android:name=".Activities.EditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name">
             <intent-filter android:label="@string/app_name">
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-
                 <!-- Accepts URIs that begin with "steamapp://steam” -->
-                <data android:scheme="steamapp"
-                    android:host="steam" />
+                <data
+                    android:host="steam"
+                    android:scheme="steamapp" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".ConnectSteamActivity"
-            android:exported="true">
-        </activity>
+            android:name=".Activities.LoggedActivity"
+            android:exported="true" />
         <activity
-            android:name=".RegistrationSteamActivity"
-            android:exported="true"
-            />
+            android:name=".Activities.RegistrationActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
