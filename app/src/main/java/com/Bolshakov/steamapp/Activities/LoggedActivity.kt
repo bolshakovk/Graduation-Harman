@@ -13,7 +13,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.lang.StringBuilder
 import java.util.*
 
-
+//TODO кнопка удаления аккаунта, кнопка редактирования аккаунта, вход под конкретного пользователя,
+// а не под первого, выбор всех пользователей, а не первого, отображение украсть в виде вьюшек
 class LoggedActivity : AppCompatActivity() {
     // initialize variables
     var textView: TextView? = null
@@ -34,7 +35,7 @@ class LoggedActivity : AppCompatActivity() {
 
         // в шапке имя профиля
         profileTextView = findViewById(R.id.profileTextView)
-        profileTextView.text = Person.name + Person.login
+        profileTextView.text = Person.name + " " + Person.login
 
 
         editActionButton = findViewById(R.id.editActionButton)

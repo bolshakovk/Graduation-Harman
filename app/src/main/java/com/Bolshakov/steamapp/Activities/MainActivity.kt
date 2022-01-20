@@ -48,12 +48,18 @@ class   MainActivity : AppCompatActivity() {
                 arrayOf(textUserName.text.toString()),
                 null, null, null)
 
-            val allTextValid: Boolean = false
+            Log.d("tag", " cursor get column index of value: ${cursor?.getColumnIndex(textUserName.text.toString())}")
+            Log.d("tag", "cursor things: ${cursor?.getColumnName(0)}")
+            val allTextValid: Boolean = isValid(textUserName, cursor.toString())
+            Log.d("tag", "all text valid: $allTextValid, cursor = $cursor cursor.toString = ${cursor.toString()}")
+            Person.name = textUserName.text.toString()
             val testInt = cursor?.count
             Log.d("tag", "cursor count $testInt")
             if (testInt!! >= 1){
                 val intent = Intent(this, LoggedActivity::class.java)
                 startActivity(intent)
+            }else {
+                //visualizeValidity(textUserName, isValid(textUserName, cursor.getColumnName(1)))
             }
                 /*
             if (allTextValid){
@@ -85,7 +91,7 @@ class   MainActivity : AppCompatActivity() {
         DBManager.openDb()
         DBManager.readDbData()
         //testView.text = Person.name.toString()
-        Log.d("tag", "person name is ${Person.name}, person email is ${Person.email}, person login is ${Person.login} FROM MAIN ACTIVITY!!!!!")
+        //Log.d("tag", "person name is ${Person.name}, person email is ${Person.email}, person login is ${Person.login} FROM MAIN ACTIVITY!!!!!")
     }
 
     fun onClickEdit(view: android.view.View) {
