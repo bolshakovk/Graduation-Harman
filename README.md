@@ -10,3 +10,5 @@
 
 * https://ru.stackoverflow.com/questions/443423/Переход-на-другую-активити-при-совпадении-нескольких-условий переходы на активити
 ![scenario](scenario.drawio.png)
+ 
+ * https://api-docs.igdb.com/#examples
