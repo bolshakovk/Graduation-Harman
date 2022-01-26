@@ -10,14 +10,12 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import com.Bolshakov.steamapp.DataBase.DBConfig
-import com.Bolshakov.steamapp.DataBase.DBManager
-import com.Bolshakov.steamapp.DataBase.Person
+import com.Bolshakov.steamapp.DataBase.DBManagerUsers
+import com.Bolshakov.steamapp.Models.Person
 import com.Bolshakov.steamapp.R
 
+
 class   MainActivity : AppCompatActivity() {
-
-
     //функция проверки на валидность, проверяется вводный текст, и сравнивается с ожидаемым
     private fun isValid(editText: EditText, expected: String): Boolean {
         val actual = editText.text.toString()
@@ -30,7 +28,7 @@ class   MainActivity : AppCompatActivity() {
         editText.setBackgroundColor(backgroundColor)
     }
 
-    // кнопка подключение... обратывается поле логина, если соотвествует хардкоженному "12", то войдет
+    // кнопка подключение...
     fun connectSteam(view: View){
         val buttonConnectSteam : Button = findViewById(R.id.button_connectSteam)
         val textUserName : EditText = findViewById(R.id.text_userName)
@@ -42,25 +40,21 @@ class   MainActivity : AppCompatActivity() {
                 return valid
             }
             //TODO убрать хардкод, добавить проверку пароля
-            val cursor = DBManager.db?.query(DBConfig.TABLE_NAME,
-                arrayOf(DBConfig.COLUMN_NAME_LOGIN),
-                "login = ?",
-                arrayOf(textUserName.text.toString()),
-                null, null, null)
+            val request = textUserName.text.toString()
+            DBManagerUsers.readDbData(request)
+            Log.d("tag", "person name is ${Person.name}, person email is ${Person.email}, person login is ${Person.login}, person id is ${Person.id}")
+/*
 
-            Log.d("tag", " cursor get column index of value: ${cursor?.getColumnIndex(textUserName.text.toString())}")
-            Log.d("tag", "cursor things: ${cursor?.getColumnName(0)}")
             val allTextValid: Boolean = isValid(textUserName, cursor.toString())
-            Log.d("tag", "all text valid: $allTextValid, cursor = $cursor cursor.toString = ${cursor.toString()}")
             Person.name = textUserName.text.toString()
             val testInt = cursor?.count
-            Log.d("tag", "cursor count $testInt")
-            if (testInt!! >= 1){
+            if (testInt!! >= 1){*/
                 val intent = Intent(this, LoggedActivity::class.java)
+                intent.putExtra("login", request)
                 startActivity(intent)
-            }else {
+            //}else {
                 //visualizeValidity(textUserName, isValid(textUserName, cursor.getColumnName(1)))
-            }
+            //}
                 /*
             if (allTextValid){
                 val intent = Intent(this, LoggedActivity::class.java)
@@ -79,24 +73,23 @@ class   MainActivity : AppCompatActivity() {
     }
 
     override fun onDestroy(){
-        Log.d("tag", "sometext")
         super.onDestroy()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //var testView: TextView = findViewById(R.id.TESTLOGINVIEW)
-        DBManager.init(this)
-        DBManager.openDb()
-        DBManager.readDbData()
-        //testView.text = Person.name.toString()
-        //Log.d("tag", "person name is ${Person.name}, person email is ${Person.email}, person login is ${Person.login} FROM MAIN ACTIVITY!!!!!")
+        DBManagerUsers.init(this)
+        DBManagerUsers.openDb()
+
+        //считать всю бд дабы не крашилось от лейт инита
+        DBManagerUsers.readDbData()
+
+
     }
 
     fun onClickEdit(view: android.view.View) {
         val intent = Intent(this, EditActivity::class.java)
         startActivity(intent)
     }
-
 }

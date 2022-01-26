@@ -2,8 +2,9 @@ package com.Bolshakov.steamapp.DataBase
 
 import android.provider.BaseColumns
 
-object DBConfig : BaseColumns {
-    const val TABLE_NAME = "games_table"
+object DBConfigUsers : BaseColumns {
+    const val TABLE_NAME = "users_table"
+    const val COLUMN_NAME_ID = BaseColumns._ID
     const val COLUMN_NAME_LOGIN = "login"
     const val COLUMN_NAME_NAME = "name"
     const val COLUMN_NAME_SURNAME = "surname"
@@ -11,7 +12,7 @@ object DBConfig : BaseColumns {
     const val COLUMN_NAME_EMAIL = "email"
     const val COLUMN_NAME_IMG_URI =  "uri"
 
-    const val DATABASE_VERSION = 4
+    const val DATABASE_VERSION = 5
     const val DATABASE_NAME = "SteamDb.db"
 
     const val CREATE_TABLE = "CREATE TABLE IF NOT EXISTS $TABLE_NAME (" +

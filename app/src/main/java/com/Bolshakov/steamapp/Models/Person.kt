@@ -1,4 +1,4 @@
-package com.Bolshakov.steamapp.DataBase
+package com.Bolshakov.steamapp.Models
 
 import kotlin.properties.Delegates
 

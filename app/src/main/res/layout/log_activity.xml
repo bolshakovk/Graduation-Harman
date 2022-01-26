@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="#212633"
     android:scrollbarStyle="insideInset"
     android:visibility="visible">
@@ -11,15 +11,18 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="129dp"
+        android:layout_height="450dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="168dp"
         android:background="#0D0F19" />
 
     <TextView
-        android:id="@+id/multyTextView"
-        android:layout_width="match_parent"
+        android:id="@+id/multyFriendTextView"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/profileTextView"
-        android:layout_marginTop="68dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="207dp"
         android:background="@android:drawable/editbox_background"
         android:drawableRight="@android:drawable/arrow_down_float"
         android:drawablePadding="16dp"
@@ -27,25 +30,40 @@
         android:padding="12dp" />
 
     <TextView
-        android:id="@+id/profileTextView"
-        android:layout_width="wrap_content"
+        android:id="@+id/multyGameTextView"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/multyFriendTextView"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="-1dp"
+        android:background="@android:drawable/editbox_background"
+        android:drawableEnd="@android:drawable/arrow_down_float"
+        android:drawablePadding="16dp"
+        android:gravity="center_vertical"
+        android:hint="Выбор игр.."
+        android:padding="12dp" />
+
+    <TextView
+        android:id="@+id/profileTextViewlogin"
+        android:layout_width="204dp"
+        android:layout_height="37dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="14dp"
+        android:layout_marginStart="-202dp"
+        android:layout_marginTop="111dp"
+        android:layout_marginEnd="204dp"
+        android:layout_toEndOf="@+id/multyGameTextView"
         android:textColor="@color/white"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/dataTextView"
-        android:layout_width="359dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:id="@+id/profileTextViewId"
+        android:layout_width="86dp"
+        android:layout_height="16dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginBottom="267dp"
-        android:text="Тут будет отображаться список общих игр"
+        android:layout_marginEnd="321dp"
+        android:layout_marginBottom="567dp"
         android:textColor="@color/white"
         android:textSize="20sp" />
 
@@ -72,7 +90,23 @@
         android:layout_marginBottom="48dp"
         android:clickable="true"
         android:onClick="onClickEdit"
+        app:backgroundTint="#3A435A"
         app:srcCompat="@android:drawable/ic_menu_edit"
         tools:ignore="UsingOnClickInXml" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idRecyclerView"
+        android:layout_width="410dp"
+        android:layout_height="443dp"
+        android:layout_alignTop="@+id/view"
+        android:layout_alignBottom="@+id/view"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="3dp" />
+
+
 
 </RelativeLayout>

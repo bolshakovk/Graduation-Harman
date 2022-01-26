@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.Bolshakov.steamapp.DataBase.DBManager
+import com.Bolshakov.steamapp.DataBase.DBManagerUsers
 import com.Bolshakov.steamapp.R
 
 class RegistrationActivity : AppCompatActivity()  {
@@ -51,7 +51,7 @@ class RegistrationActivity : AppCompatActivity()  {
         val saveButton : Button = findViewById(R.id.saveButton_id)
         saveButton.setOnClickListener(View.OnClickListener {
             //if (personPassword.text.equals(personPasswordRepeat.text)){
-                DBManager.insertToDb(login = personLogin.text.toString(), name = personName.text.toString(), surname = personSurname.text.toString(),
+                DBManagerUsers.insertToDb(login = personLogin.text.toString(), name = personName.text.toString(), surname = personSurname.text.toString(),
                     password = personPassword.text.toString(), email = personEmail.text.toString())
                 val intent = Intent(this, LoggedActivity::class.java)
                 startActivity(intent)

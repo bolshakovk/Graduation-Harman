@@ -8,25 +8,9 @@
     tools:context=".Activities.EditActivity">
 
     <EditText
-        android:id="@+id/personSNameEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:ems="10"
-        android:hint="@string/Фамилия"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColorHint="#636161"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view3" />
-
-    <EditText
         android:id="@+id/personPasswordRepeatEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="224dp"
         android:ems="10"
         android:hint="@string/Повтор"
         android:inputType="textPersonName"
@@ -35,13 +19,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view3" />
+        app:layout_constraintTop_toBottomOf="@+id/personPasswordtEdit" />
 
     <EditText
         android:id="@+id/personPasswordtEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
         android:ems="10"
         android:hint="@string/Пароль"
         android:inputType="textPersonName"
@@ -50,13 +33,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view3" />
+        app:layout_constraintTop_toBottomOf="@+id/personMailEdit" />
 
     <EditText
-        android:id="@+id/personPasswordEdit"
+        android:id="@+id/personMailEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
         android:ems="10"
         android:hint="@string/Почта"
         android:inputType="textPersonName"
@@ -65,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view3" />
+        app:layout_constraintTop_toBottomOf="@+id/personLoginEdit" />
 
     <View
         android:id="@+id/view3"
@@ -101,21 +83,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view3" />
 
-    <EditText
-        android:id="@+id/personNameEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:ems="10"
-        android:hint="@string/Имя"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColorHint="#636161"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view3" />
-
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
@@ -139,7 +106,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/personPasswordRepeatEdit"
-        app:layout_constraintVertical_bias="0.139"
+        app:layout_constraintVertical_bias="0.127"
         app:srcCompat="@drawable/ic_profile"
         tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
