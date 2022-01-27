@@ -12,3 +12,4 @@
 ![scenario](scenario.drawio.png)
  
  * https://api-docs.igdb.com/#examples
+//TODO retrofit для интеграции пост запроса с постмана
