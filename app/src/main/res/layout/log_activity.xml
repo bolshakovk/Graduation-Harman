@@ -18,11 +18,11 @@
 
     <TextView
         android:id="@+id/multyFriendTextView"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="65dp"
-        android:layout_marginEnd="207dp"
+        android:layout_marginEnd="0dp"
         android:background="@android:drawable/editbox_background"
         android:drawableRight="@android:drawable/arrow_down_float"
         android:drawablePadding="16dp"
@@ -31,11 +31,13 @@
 
     <TextView
         android:id="@+id/multyGameTextView"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/multyFriendTextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="-1dp"
+        android:layout_marginEnd="0dp"
         android:background="@android:drawable/editbox_background"
         android:drawableEnd="@android:drawable/arrow_down_float"
         android:drawablePadding="16dp"
@@ -53,17 +55,6 @@
         android:layout_marginTop="111dp"
         android:layout_marginEnd="204dp"
         android:layout_toEndOf="@+id/multyGameTextView"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/profileTextViewId"
-        android:layout_width="86dp"
-        android:layout_height="16dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="321dp"
-        android:layout_marginBottom="567dp"
         android:textColor="@color/white"
         android:textSize="20sp" />
 
@@ -107,6 +98,16 @@
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="3dp" />
 
+    <TextView
+        android:id="@+id/profileTextView"
+        android:layout_width="108dp"
+        android:layout_height="35dp"
+        android:layout_alignBottom="@+id/view"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="158dp"
+        android:layout_marginBottom="454dp"
+        android:textColor="#D3C8C8"
+        android:textSize="20sp" />
 
 
 </RelativeLayout>

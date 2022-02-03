@@ -9,32 +9,13 @@
 
     <TextView
         android:id="@+id/textViewName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="406dp"
+        android:layout_height="36dp"
         android:text="Name"
         android:textColor="#7E7A7A"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textDecription"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textAlignment="textStart"
-        android:textColor="#7E7A7A"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textRating"
-        app:layout_constraintTop_toBottomOf="@+id/textViewName" />
-
-    <TextView
-        android:id="@+id/textRating"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="rating"
-        android:textAlignment="textEnd"
-        android:textColor="#7E7A7A"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

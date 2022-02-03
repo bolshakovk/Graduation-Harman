@@ -17,10 +17,8 @@ class MyDialogFragment : DialogFragment(){
         return activity?.let {
             val builder = AlertDialog.Builder(it)
             Log.d("tag", "person login: ${Person.login}")
-            val cursor = DBManagerUsers.db?.delete(DBConfigUsers.TABLE_NAME,
-                                "${DBConfigUsers.COLUMN_NAME_LOGIN} = ?",
-                arrayOf(Person.login)
-            )
+            DBManagerUsers.deleteDbData(Person.login)
+
             Log.d("tag", "deleting...: ${Person.login}")
             builder.setTitle("Вы действительно хотите удалить аккаунт?")
                 .setCancelable(true)

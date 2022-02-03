@@ -1,15 +1,19 @@
 package com.Bolshakov.steamapp.Activities
 
 import android.app.Activity
+import android.app.Person
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.Bolshakov.steamapp.DataBase.DBManagerUsers
+import com.Bolshakov.steamapp.Models.Person.login
 import com.Bolshakov.steamapp.R
 
 class RegistrationActivity : AppCompatActivity()  {
@@ -46,19 +50,26 @@ class RegistrationActivity : AppCompatActivity()  {
         }
     }
 
+
     fun onClickSave(view: android.view.View) {
+        val text = "Пароль неверный!"
+        val duration = Toast.LENGTH_SHORT
+        var toast = Toast.makeText(applicationContext, text, duration)
+        toast.setGravity(Gravity.CENTER, 0, 0)
         wrongText.text = ""
         val saveButton : Button = findViewById(R.id.saveButton_id)
         saveButton.setOnClickListener(View.OnClickListener {
-            //if (personPassword.text.equals(personPasswordRepeat.text)){
+
+            if (personPassword.text.toString().equals(personPasswordRepeat.text.toString())){
                 DBManagerUsers.insertToDb(login = personLogin.text.toString(), name = personName.text.toString(), surname = personSurname.text.toString(),
                     password = personPassword.text.toString(), email = personEmail.text.toString())
                 val intent = Intent(this, LoggedActivity::class.java)
                 startActivity(intent)
             Log.d("tag", "password: $personPassword and repeat password $personPasswordRepeat")
-            //}else {
-                //wrongText.text = "Пароли не корректны"
-            //}
+            }else {
+                toast = Toast.makeText(applicationContext, "Пароли не корректны!", duration)
+                toast.show()
+            }
         })
     }
 

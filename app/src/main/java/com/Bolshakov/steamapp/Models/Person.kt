@@ -9,4 +9,5 @@ object Person {
     lateinit var password : String
     lateinit var email : String
     lateinit var login : String
+    var games : ArrayList<Game> = ArrayList<Game>()
 }

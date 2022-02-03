@@ -11,8 +11,9 @@ object DBConfigUsers : BaseColumns {
     const val COLUMN_NAME_PASSWORD = "password"
     const val COLUMN_NAME_EMAIL = "email"
     const val COLUMN_NAME_IMG_URI =  "uri"
+    const val COLUMN_NAME_GAMES = "games"
 
-    const val DATABASE_VERSION = 5
+    const val DATABASE_VERSION = 10
     const val DATABASE_NAME = "SteamDb.db"
 
     const val CREATE_TABLE = "CREATE TABLE IF NOT EXISTS $TABLE_NAME (" +
@@ -22,6 +23,7 @@ object DBConfigUsers : BaseColumns {
             "$COLUMN_NAME_SURNAME TEXT," +
             "$COLUMN_NAME_PASSWORD TEXT," +
             "$COLUMN_NAME_EMAIL TEXT NOT NULL UNIQUE," +
+            "$COLUMN_NAME_GAMES TEXT" +
             "$COLUMN_NAME_IMG_URI TEXT)"
 
     const val SQL_DELETE_TABLE = "DROP TABLE IF EXISTS $TABLE_NAME"
